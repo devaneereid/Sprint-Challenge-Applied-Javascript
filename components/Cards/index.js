@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -17,3 +19,53 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+Axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    import Axios from "axios";
+    console.log(response.data);
+    response.data.forEach(data => {
+        const cardInfo = newCard(card.data);
+        entryPoint.appendChild(cardInfo);
+    });
+})
+.catch(error => {
+    console.log("The data was not returned", error);
+});
+
+const cards = document.querySelector("card");
+
+function newCard (headline, div, img, span, data, content) {
+    const card1 = document.createElement('div');
+    const headlineArticle = document.createElement('div');
+    const authorDiv = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const cardImg = document.createElement('img');
+    const authorName = document.createElement('span');
+
+    card1.appendChild(headlineArticle);
+    card1.appendChild(authorDiv);
+    card1.appendChild(imgContainer);
+    card1.appendChild(cardImg);
+    card1.appendChild(authorName);
+
+    card1.classList.add('card');
+    headlineArticle.classList.add('headline');
+    authorName.classList.add('author');
+    imgContainer.classList.add('img-container');
+    cardImg.classList.add('img-src')
+    
+    cardImg.src = img;
+    headlineArticle.textContent = `${this.Headline}`;
+    authorName.textContent = `By ${this.author}`;
+    
+    console.log(card1.data);
+    return card1;
+}
+
+cards.appendChild(newCard());
+console.log(card1);
+
+
+console.log(newCard.data);
+console.log(`${Headline}`);
+console.log(`By ${author}`);
