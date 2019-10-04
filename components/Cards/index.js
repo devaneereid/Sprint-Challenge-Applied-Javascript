@@ -21,7 +21,12 @@ import Axios from "axios";
 // Create a card for each of the articles and add the card to the DOM.
 Axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
+    import Axios from "axios";
     console.log(response.data);
+    response.data.forEach(data => {
+        const cardInfo = newCard(card.data);
+        entryPoint.appendChild(cardInfo);
+    });
 })
 .catch(error => {
     console.log("The data was not returned", error);
@@ -50,10 +55,10 @@ function newCard (headline, div, img, span, data, content) {
     cardImg.classList.add('img-src')
     
     cardImg.src = img;
-    headlineArticle.textContent = `${Headline}`;
-    authorName.textContent = `By ${author}`;
+    headlineArticle.textContent = `${this.Headline}`;
+    authorName.textContent = `By ${this.author}`;
     
-    console.log(response.data);
+    console.log(card1.data);
     return card1;
 }
 

@@ -64,7 +64,6 @@ newTopics.appendChild(addTopics());
 // newTopics.appendChild(addTopics(data.title1, data.title2, data.title3, data.title4, data.title5));
 
 
-
 // window.onload = () => addTopics.forEach(addTopics => {
 //     newTopics.appendChild(addTopics(data.title1, newTopics.title2, newTopics.title3, newTopics.title4, newTopics.title5))
 // });
