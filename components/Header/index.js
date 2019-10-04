@@ -31,7 +31,6 @@ function Header(title, span, date, temp, items) {
 
 //  var element = document.getElementById("div");
 //  element.appendChild("span");
-
 return newHeader;
 }
 window.onload = () => header1.forEach(header1=>{
