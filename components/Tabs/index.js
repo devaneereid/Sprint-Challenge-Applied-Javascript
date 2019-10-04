@@ -18,18 +18,25 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 });
 
 
-function addTopics(topicInfo) {
+
+
+
+const newTopics = document.querySelector('.topics')
+
+function addTopics(div, tab, topic, content) {
+    const maintitle = document.createElement('div');
     const title1 = document.createElement('javascript');
     const title2 = document.createElement('bootstrap');
     const title3 = document.createElement('technology');
     const title4 = document.createElement('jquery');    
     const title5 = document.createElement('node.js');
 
-    title1.appendChild(title2);
-    title1.appendChild(title3);
-    title1.appendChild(title4);
-    title1.appendChild(title5);
+    maintitle.appendChild(title2);
+    maintitle.appendChild(title3);
+    maintitle.appendChild(title4);
+    maintitle.appendChild(title5);
 
+    maintitle.classList.add('tab')
     title1.classList.add('javascript');
     title2.classList.add('bootstrap');
     title3.classList.add('technology');
@@ -42,7 +49,21 @@ function addTopics(topicInfo) {
     title4.textContent = "JQUERY";
     title5.textContent = "Node.js";
 
-    console.log(title1.data); 
+    maintitle.addEventListener("click", () => {
+        maintitle.classList.toggle("selected");
+    });
+
+    console.log(maintitle.data); 
+    console.log(title1.data);
     console.log(addTopics.data);
-    return title1;
+    return maintitle;
 }
+newTopics.appendChild(addTopics());
+
+// newTopics.appendChild(addTopics(data.title1, data.title2, data.title3, data.title4, data.title5));
+
+
+
+// window.onload = () => addTopics.forEach(addTopics => {
+//     newTopics.appendChild(addTopics(data.title1, newTopics.title2, newTopics.title3, newTopics.title4, newTopics.title5))
+// });

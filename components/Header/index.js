@@ -29,8 +29,8 @@ function Header(title, span, date, temp, items) {
     articleTitle.textContent = "Lambda Times";
     articleTemp.textContent = "98°";
 
+    console.log(articleHeader.data);
 return articleHeader;
 }
-// Not sure if this is correct
 
 header1.appendChild(Header()); 
