@@ -30,7 +30,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
-In my understanding, the DOM is a bridge between the browser and a website. 
+In my understanding, the DOM is a bridge between the browser and a
 
 2. What is an event?
 
