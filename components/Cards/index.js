@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -17,3 +19,36 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+Axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    console.log(response.data);
+})
+.catch(error => {
+    console.log("The data was not returned", error);
+});
+const cards = document.querySelector("card");
+
+function newCard (headline, ) {
+    const card1 = document.createElement('div');
+    const headlineArticle = document.createElement('div');
+    const authorDiv = document.createElement('div');
+    const cardImg = document.createElement('img');
+    const authorName = document.createElement('span');
+
+    card1.appendChild(headlineArticle);
+    card1.appendChild(authorDiv);
+    card1.appendChild(cardImg);
+    card1.appendChild(authorName);
+
+    card1.classList.add('card');
+    headlineArticle.classList.add('headline');
+    authorName.classList.add('author');
+    
+    cardImg.src = data;
+    headlineArticle.textContent = `${Headline}`;
+    authorName.textContent = `By ${author}`;
+    
+    console.log(card.data);
+    return card1;
+}
+

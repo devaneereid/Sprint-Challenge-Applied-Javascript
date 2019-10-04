@@ -25,14 +25,12 @@ function Header(title, span, date, temp, items) {
     articleTitle.classList.add('h1');
     articleTemp.classList.add('temp');
 
-    articleDate.textContent = date;
-    articleTitle.textContent = title;
-    articleTemp.textContent = temp;
+    articleDate.textContent = "SMARCH 28, 2019";
+    articleTitle.textContent = "Lambda Times";
+    articleTemp.textContent = "98°";
 
-//  var element = document.getElementById("div");
-//  element.appendChild("span");
-return newHeader;
+return articleHeader;
 }
-window.onload = () => header1.forEach(header1=>{
-header1.appendChild(Header(header1.date, header1.title, header1.temp))
-});
+// Not sure if this is correct
+
+header1.appendChild(Header()); 
