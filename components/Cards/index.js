@@ -26,23 +26,28 @@ Axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .catch(error => {
     console.log("The data was not returned", error);
 });
+
 const cards = document.querySelector("card");
 
-function newCard (headline, div, img, span) {
+function newCard (headline, div, img, span, data, content) {
     const card1 = document.createElement('div');
     const headlineArticle = document.createElement('div');
     const authorDiv = document.createElement('div');
+    const imgContainer = document.createElement('div');
     const cardImg = document.createElement('img');
     const authorName = document.createElement('span');
 
     card1.appendChild(headlineArticle);
     card1.appendChild(authorDiv);
+    card1.appendChild(imgContainer);
     card1.appendChild(cardImg);
     card1.appendChild(authorName);
 
     card1.classList.add('card');
     headlineArticle.classList.add('headline');
     authorName.classList.add('author');
+    imgContainer.classList.add('img-container');
+    cardImg.classList.add('img-src')
     
     cardImg.src = img;
     headlineArticle.textContent = `${Headline}`;
@@ -51,7 +56,11 @@ function newCard (headline, div, img, span) {
     console.log(response.data);
     return card1;
 }
+
 cards.appendChild(newCard());
+console.log(card1);
+
+
 console.log(newCard.data);
 console.log(`${Headline}`);
 console.log(`By ${author}`);

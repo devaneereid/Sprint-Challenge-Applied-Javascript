@@ -31,6 +31,7 @@ function addTopics(div, tab, topic, content) {
     const title4 = document.createElement('jquery');    
     const title5 = document.createElement('node.js');
 
+    maintitle.appendChild(title1);
     maintitle.appendChild(title2);
     maintitle.appendChild(title3);
     maintitle.appendChild(title4);
